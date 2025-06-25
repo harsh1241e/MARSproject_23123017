@@ -1,42 +1,38 @@
-# 🎧 Audio Emotion Classification using XGBoost
 
-This project implements a complete pipeline for classifying emotions from speech using machine learning. It includes a fully functional *Streamlit web app* that allows users to upload ⁠ .wav ⁠ audio files and get real-time emotion predictions using a pre-trained *XGBoost* model.
+🎧 Speech Emotion Recognition with XGBoost
+This project delivers an end-to-end machine learning solution for detecting emotions in human speech. At its core is a fast and lightweight Streamlit application where users can upload .wav audio files and instantly receive emotion predictions using a trained XGBoost model.
 
----
+🚀 Key Highlights
+🎙️ Upload .wav audio files directly via an intuitive web interface
 
-## 🚀 Features
+🎼 Automatically extracts essential audio features — MFCCs, Chroma, and Mel Spectrogram
 
-•⁠  ⁠Upload a ⁠ .wav ⁠ file through the web interface
-•⁠  ⁠Extracts MFCC, Chroma, and Mel Spectrogram features
-•⁠  ⁠Predicts emotion using a trained ⁠ XGBoost ⁠ model
-•⁠  ⁠Displays the predicted emotion in a clean UI
-•⁠  ⁠Lightweight and fast — suitable for real-time demos
+🤖 Uses a robust XGBoost model for emotion classification
 
----
+📊 Clean and user-friendly output visualization
 
-## 🎯 Emotions Recognized
+⚡ Optimized for real-time responsiveness and demos
 
-The model classifies speech into the following 8 emotions:
+🎯 Emotions Detected
+The system can identify the following eight emotional states from speech:
 
-•⁠  ⁠😠 Angry  
-•⁠  ⁠😌 Calm  
-•⁠  ⁠🤢 Disgust  
-•⁠  ⁠😨 Fearful  
-•⁠  ⁠😄 Happy  
-•⁠  ⁠😐 Neutral  
-•⁠  ⁠😢 Sad  
-•⁠  ⁠😲 Surprise  
+ Angry
+ Calm
+ Disgust
+ Fearful
+ Happy
+ Neutral
+ Sad
+ Surprise
 
----
+🧠 Under the Hood
+Classifier: XGBClassifier from the xgboost library
 
-## 🧠 Model Details
+Training Data: Features include MFCC, Chroma vectors, and Mel Spectrograms
 
-•⁠  ⁠Model: ⁠ XGBClassifier ⁠ from ⁠ xgboost ⁠
-•⁠  ⁠Trained on MFCC, Chroma, and Mel-spectrogram features
-•⁠  ⁠Input: ⁠ .wav ⁠ audio sampled at 16 kHz
-•⁠  ⁠Saved as: ⁠ xgb_model.json ⁠
+Input Format: .wav audio files at 16 kHz sampling rate
 
----
+Model Artifact: Saved in JSON format as xgb_model.json
 
 ## 📁 Project Structure
 | Class            | Precision | Recall | F1-Score | Support |
