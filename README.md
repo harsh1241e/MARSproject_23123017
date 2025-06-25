@@ -4,7 +4,7 @@ This project delivers an end-to-end machine learning solution for detecting emot
 
 
 
-WEB APP LINK - https://marsproject23123017-zwjxcfup6bfxvdbdl29gfq.streamlit.app/
+WEB APP LINK - [https://marsproject23123017-zwjxcfup6bfxvdbdl29gfq.streamlit.app/](https://marsproject23123017-8hp45dqqyqsx4t5gvfzkub.streamlit.app/)
 🚀 Key Highlights
 🎙️ Upload .wav audio files directly via an intuitive web interface
 
