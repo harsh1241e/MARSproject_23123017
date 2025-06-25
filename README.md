@@ -35,7 +35,9 @@ Training Data: Features include MFCC, Chroma vectors, and Mel Spectrograms
 
 Input Format: .wav audio files at 16 kHz sampling rate
 
-Model Artifact: Saved in JSON format as xgb_model.json
+Model Artifact: Saved in JSON format as best_model.json
+📁 Project Structure
+README.md 23123017_HARSHDEEPSINGH_emotion_classification.ipynb app.py requirements.txt best_model.json
 
 ## 📁 Project Structure
 | Class            | Precision | Recall | F1-Score | Support |
