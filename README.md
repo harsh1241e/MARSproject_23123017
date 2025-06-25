@@ -1,7 +1,7 @@
 
 🎧 Speech Emotion Recognition with XGBoost
 This project delivers an end-to-end machine learning solution for detecting emotions in human speech. At its core is a fast and lightweight Streamlit application where users can upload .wav audio files and instantly receive emotion predictions using a trained XGBoost model.
-
+WEB APP LINK - https://marsproject23123017-zwjxcfup6bfxvdbdl29gfq.streamlit.app/
 🚀 Key Highlights
 🎙️ Upload .wav audio files directly via an intuitive web interface
 
