@@ -1,6 +1,8 @@
 import streamlit as st
 import librosa
 import numpy as np
+import matplotlib.pyplot as plt
+import librosa.display
 from xgboost import XGBClassifier
 import tempfile
 import warnings
@@ -91,10 +93,36 @@ if uploaded_file:
     st.markdown("### 🎧 Audio Preview")
     st.audio(uploaded_file, format='audio/wav')
 
+    # Load and resample audio
+    y, sr = librosa.load(uploaded_file, sr=16000)
+
+    # Waveform
+    st.markdown("#### 📉 Waveform")
+    fig_wave, ax_wave = plt.subplots(figsize=(10, 3))
+    librosa.display.waveshow(y, sr=sr, ax=ax_wave, color="#1f77b4")
+    ax_wave.set_title("Waveform", fontsize=12)
+    ax_wave.set_xlabel("Time (s)")
+    ax_wave.set_ylabel("Amplitude")
+    st.pyplot(fig_wave)
+
+    # Mel Spectrogram
+    st.markdown("#### 📊 Mel Spectrogram")
+    mel_spect = librosa.feature.melspectrogram(y=y, sr=sr, n_mels=128)
+    mel_db = librosa.power_to_db(mel_spect, ref=np.max)
+
+    fig_mel, ax_mel = plt.subplots(figsize=(10, 4))
+    img = librosa.display.specshow(mel_db, x_axis='time', y_axis='mel', sr=sr,
+                                   fmax=8000, ax=ax_mel, cmap='magma')
+    ax_mel.set_title("Mel Spectrogram (dB)", fontsize=12)
+    fig_mel.colorbar(img, ax=ax_mel, format='%+2.0f dB')
+    st.pyplot(fig_mel)
+
+    # Save to temp file for prediction
     with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp_file:
         tmp_file.write(uploaded_file.read())
         tmp_path = tmp_file.name
 
+    # Prediction
     with st.spinner("⏳ Analyzing..."):
         try:
             emotion = predict_emotion(tmp_path)
@@ -118,3 +146,4 @@ st.markdown(
     "<p style='text-align: center; color: #888;'>💡 Built with ❤️ using Streamlit & XGBoost</p>",
     unsafe_allow_html=True
 )
+
