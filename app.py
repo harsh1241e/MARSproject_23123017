@@ -10,7 +10,7 @@ warnings.filterwarnings("ignore")
 
 # 🧠 Load the XGBoost Model
 @st.cache_resource
-def load_model(path="xgb_model.json"):
+def load_model(path="best_model.json"):
     model = XGBClassifier()
     model.load_model(path)
     return model
