@@ -28,7 +28,7 @@ The system can identify the following eight emotional states from speech:
  Sad
  Surprise
 
-🧠 Under the Hood
+## Under the Hood
 Classifier: XGBClassifier from the xgboost library
 
 Training Data: Features include MFCC, Chroma vectors, and Mel Spectrograms
@@ -36,10 +36,12 @@ Training Data: Features include MFCC, Chroma vectors, and Mel Spectrograms
 Input Format: .wav audio files at 16 kHz sampling rate
 
 Model Artifact: Saved in JSON format as best_model.json
-📁 Project Structure
+## Project Structure
 README.md 23123017_HARSHDEEPSINGH_emotion_classification.ipynb app.py requirements.txt best_model.json
 
-## 📁 Project Structure
+
+
+
 | Class            | Precision | Recall | F1-Score | Support |
 | ---------------- | --------- | ------ | -------- | ------- |
 | 0                | 0.86      | 0.89   | 0.87     | 38.18   |
